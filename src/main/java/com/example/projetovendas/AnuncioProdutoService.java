@@ -7,21 +7,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @RequestMapping("/anuncio")
 public class AnuncioProdutoService {
-	
-	
+			
 	private static final AnuncioProduto[] PRODUCTS= new AnuncioProduto[] {
 		new AnuncioProduto(1,"caneta",5.00,500,"unidade","Real","transportadora","Azul","Blumenau","Sc","Brasil","888-8888","/algumlugar"),
 		new AnuncioProduto(2,"caneta",7.00,500,"unidade","Real","transportadora","Amarela","Blumenau","Sc","Brasil","888-8333","/algumlugar2")
 	};
-	
+		
 	@GetMapping("/list1")
     public AnuncioProduto[] list() {
-    	return AnuncioProdutoService.PRODUCTS;
+    	return AnuncioProdutoService.PRODUCTS ;
     }
     
 	@GetMapping("/{id}")

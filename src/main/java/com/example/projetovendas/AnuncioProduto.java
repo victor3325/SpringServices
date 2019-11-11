@@ -1,7 +1,10 @@
 package com.example.projetovendas;
 
-public class AnuncioProduto {
 
+public class AnuncioProduto {
+		
+	
+	
 		private final int id;
 		private final String nome;
 	    private final double preco_unit;

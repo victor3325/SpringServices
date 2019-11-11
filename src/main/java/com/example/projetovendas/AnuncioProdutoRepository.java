@@ -1,5 +1,9 @@
 package com.example.projetovendas;
 
-public class AnuncioProdutoRepository {
+import javax.persistence.Id;
 
+import org.springframework.data.repository.CrudRepository;
+
+interface AnuncioProdutoRepository extends CrudRepository<AnuncioProdutoEntity, Id> {
+	
 }
