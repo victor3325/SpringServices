@@ -12,9 +12,9 @@ final class CarrinhoEntity{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	private double total;
+	private double valor_unitario;
 	
-	private double frete;
+	private double valor_frete;
 	
 	private double total_pedido;
 		
@@ -22,43 +22,52 @@ final class CarrinhoEntity{
 		
 	}
 	
-	public CarrinhoEntity(int id, double total, double frete, double total_pedido) {
+	public CarrinhoEntity(int id, double valor_unitario, double valor_valor_valor_frete, double total_pedido) {
 		super();
 		this.id = id;
-		this.total = total;
-		this.frete = frete;
+		this.valor_unitario = valor_unitario;
+		this.valor_frete = valor_valor_valor_frete;
+		this.total_pedido = total_pedido;
+	}
+
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setValor_unitario(double valor_unitario) {
+		this.valor_unitario = valor_unitario;
+	}
+
+	public void setValor_frete(double valor_frete) {
+		this.valor_frete = valor_frete;
+	}
+
+	public void setTotal_pedido(double total_pedido) {
 		this.total_pedido = total_pedido;
 	}
 
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public double getValor_unitario() {
+		return valor_unitario;
 	}
-	public double getTotal() {
-		return total;
+
+	public double getValor_frete() {
+		return valor_frete;
 	}
-	public void setTotal(double total) {
-		this.total = total;
-	}
-	public double getFrete() {
-		return frete;
-	}
-	public void setFrete(double frete) {
-		this.frete = frete;
-	}
+
 	public double getTotal_pedido() {
 		return total_pedido;
 	}
-	public void setTotal_pedido(double total_pedido) {
-		this.total_pedido = total_pedido;
-	}
-	
+
 	@Override
 	public String toString() {
-		return "CarrinhoEntity [id = " + id + ", total=" + total + ", frete = " + frete + ", total_pedido=" + total_pedido +"]";
+		return "CarrinhoEntity [id = " + id + ", valor_unitario=" + valor_unitario + ", valor_frete = " + valor_frete + ", total_pedido=" + total_pedido +"]";
 	}
+	
 	
 }
 
