@@ -5,12 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "Carrinh")
+@Entity(name = "Carrinho")
 final class CarrinhoEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private long id;
 	
 	private double valor_unitario;
 	
@@ -22,7 +22,7 @@ final class CarrinhoEntity{
 		
 	}
 	
-	public CarrinhoEntity(int id, double valor_unitario, double valor_valor_valor_frete, double total_pedido) {
+	public CarrinhoEntity(long id, double valor_unitario, double valor_valor_valor_frete, double total_pedido) {
 		super();
 		this.id = id;
 		this.valor_unitario = valor_unitario;
@@ -31,7 +31,7 @@ final class CarrinhoEntity{
 	}
 
 	
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -47,7 +47,7 @@ final class CarrinhoEntity{
 		this.total_pedido = total_pedido;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

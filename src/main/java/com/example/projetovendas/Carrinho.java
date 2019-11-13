@@ -1,21 +1,21 @@
 package com.example.projetovendas;
 
 public class Carrinho {
-	 public static final Carrinho NULL_VALUE = new Carrinho(Integer.valueOf(0),Double.valueOf(0.0),Double.valueOf(0.0),Double.valueOf(0.0));
+	 public static final Carrinho NULL_VALUE = new Carrinho(Long.valueOf(0),Double.valueOf(0.0),Double.valueOf(0.0),Double.valueOf(0.0));
 	
-	private int id;
+	private long id;
 	private double valor_unitario;
 	private double valor_frete;
 	private double total_pedido;
 	
-	public Carrinho(int id, double valor_unitario, double valor_frete, double total_pedido) {
+	public Carrinho(long id, double valor_unitario, double valor_frete, double total_pedido) {
 		this.id = id;
 		this.valor_unitario = valor_unitario;
 		this.valor_frete = valor_frete;
 		this.total_pedido = total_pedido;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

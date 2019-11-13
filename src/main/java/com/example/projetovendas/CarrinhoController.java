@@ -16,23 +16,23 @@ final class CarrinhoController {
 	}
 
 	private static void updateEntityFromDTO(final Carrinho carrinho, final CarrinhoEntity carrinhoEntity) {
-		carrinhoEntity.setId(carrinho.getId());
+		carrinhoEntity.setId(carrinho.getId());;
 		carrinhoEntity.setValor_unitario(carrinho.getValor_unitario());
 		carrinhoEntity.setValor_frete(carrinho.getvalor_Frete());
 		carrinhoEntity.setTotal_pedido(carrinho.getTotal_pedido());
 	}
 
 	private static CarrinhoEntity toEntity(final Carrinho carrinho) {
-		final int id = carrinho.getId();
+		final long id = carrinho.getId();
 		final double valor_unitario = carrinho.getValor_unitario();
 		final double valor_frete = carrinho.getvalor_Frete();
 		final double total_pedido = carrinho.getTotal_pedido();
-		return new CarrinhoEntity(id,valor_unitario, valor_frete, total_pedido);
+		return new CarrinhoEntity(id, valor_unitario,valor_frete, total_pedido);
 	}
 
 	private static Carrinho toDTO(final CarrinhoEntity carrinhoEntity) {
 
-		final int id = carrinhoEntity.getId();
+		final long id = carrinhoEntity.getId();
 		final double valor_unitario = carrinhoEntity.getValor_unitario();
 		final double valor_frete = carrinhoEntity.getValor_frete();
 		final double total_pedido = carrinhoEntity.getTotal_pedido();
@@ -50,7 +50,7 @@ final class CarrinhoController {
 		return carrinho;
 	}
 
-	Carrinho get(final Long id) {
+	Carrinho getCarrinho(final Long id) {
 		final Optional<CarrinhoEntity> optionalCarrinho = this.carrinhoRepository.findById(id);
 		if (optionalCarrinho.isPresent()) {
 			return CarrinhoController.toDTO(optionalCarrinho.get());
@@ -68,22 +68,22 @@ final class CarrinhoController {
 		return Carrinho.NULL_VALUE;
 	}
 
-	int insertCarrinho(final Carrinho carrinho) {
+	Long insertCarrinho(final Carrinho carrinho) {
 		final CarrinhoEntity carrinhoEntity = CarrinhoController.toEntity(carrinho);
 		this.carrinhoRepository.save(carrinhoEntity);
-		return carrinhoEntity.getId();
+		return carrinhoEntity.getId(id);
 	}
 
-	Carrinho updateProduct(final Long id, final Carrinho carrinho) {
+	Carrinho updateCarrinho(final Long id, final Carrinho carrinho) {
 		final Optional<CarrinhoEntity> optionalCarrinho = this.carrinhoRepository.findById(id);
 		if (optionalCarrinho.isPresent()) {
 			final CarrinhoEntity carrinhoEntity = optionalCarrinho.get();
-			final Carrinho oldcarrinho = CarrinhoController.toDTO(carrinhoEntity);
+			final Carrinho oldCarrinho = CarrinhoController.toDTO(carrinhoEntity);
 			CarrinhoController.updateEntityFromDTO(carrinho, carrinhoEntity);
 			this.carrinhoRepository.save(carrinhoEntity);
-			return oldcarrinho;
+			return oldCarrinho;
 		}
-		return carrinho.NULL_VALUE;
+		return Carrinho.NULL_VALUE;
 		
 	}
 
