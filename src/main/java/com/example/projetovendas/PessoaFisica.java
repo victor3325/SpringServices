@@ -1,7 +1,7 @@
 package com.example.projetovendas;
 
 public class PessoaFisica{
-	private final int id;	
+	private final long id;	
 	private final String nome;
 	private final String sobrenome;
 	private final String cpf;
@@ -14,7 +14,7 @@ public class PessoaFisica{
 	private final String rua;
 	private final String cep;
 
-	public PessoaFisica(int id, String nome, String sobrenome, String cpf, String telefone, String celular, String pais,
+	public PessoaFisica(long id, String nome, String sobrenome, String cpf, String telefone, String celular, String pais,
 			String estado, String cidade, String bairro, String rua, String cep) {
 		super();
 		this.id = id;
@@ -39,7 +39,7 @@ public class PessoaFisica{
 		return sobrenome;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

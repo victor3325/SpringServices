@@ -1,5 +1,7 @@
 package com.example.projetovendas;
 
+import java.util.Arrays;
+
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
@@ -20,20 +22,18 @@ public class PfisicaService {
 			new PessoaFisica(2, "Miguel", "Zimm", "78945613285", "4788888888", "47977777777", "Brasil", "Ascura", "Ascura Pequena", "Ascurrinha", "Dr Ascurrar", "89000-001")
 	};
 
-	@GetMapping("/list")
-	public PessoaFisica[] list(){
-		return PfisicaService.Pf;
-	}
-	@GetMapping("/{id}")
-	public ResponseEntity<PessoaFisica> getPessoaFisica (@PathVariable(value = "id") @Valid int id){
-		if(id < 0 || id >= PfisicaService.Pf.length){
-		
-		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
+	private final PfisicaController pfisicaController;
 	
-		final PessoaFisica pessoaf = PfisicaService.Pf[id];
-		return new ResponseEntity<>(pessoaf,HttpStatus.OK);
+	public PfisicaService(final PfisicaController pfisicaController) {
+		this.pfisicaController = pfisicaController;
+		Arrays.asList(PfisicaService.Pf).forEach(dto -> this.pfisicaController.inse);
+
 	}
+	@GetMapping("/list")
+	
+	
+	@GetMapping("/{id}")
+
 }
 
 
