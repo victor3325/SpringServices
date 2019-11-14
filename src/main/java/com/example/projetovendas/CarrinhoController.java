@@ -73,7 +73,7 @@ final class CarrinhoController {
 	Long insertCarrinho(final Carrinho carrinho) {
 		final CarrinhoEntity carrinhoEntity = CarrinhoController.toEntity(carrinho);
 		this.carrinhoRepository.save(carrinhoEntity);
-		return carrinhoEntity.getId(id);
+		return carrinhoEntity.getId();
 	}
 
 	Carrinho updateCarrinho(final Long id, final Carrinho carrinho) {
