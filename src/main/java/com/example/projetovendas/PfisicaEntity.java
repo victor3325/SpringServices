@@ -148,6 +148,4 @@ final class PfisicaEntity {
 				+ ", cidade=" + cidade + ", bairro=" + bairro + ", rua=" + rua + ", cep=" + cep + "]";
 	}
 	
-	
 }
-

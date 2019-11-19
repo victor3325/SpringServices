@@ -1,7 +1,7 @@
 package com.example.projetovendas;
 
 public abstract class CadastroPessoa {
-	private final int id;
+	private final long id;
 	private final String nome;
 	private final String telefone;
 	private final String celular;
@@ -12,7 +12,7 @@ public abstract class CadastroPessoa {
 	private final String rua;
 	private final String cep;
 	
-	public CadastroPessoa(int id, String nome, String telefone, String celular, String pais, String estado,
+	public CadastroPessoa(long id, String nome, String telefone, String celular, String pais, String estado,
 			String cidade, String bairro, String rua, String cep) {
 		super();
 		this.id = id;
@@ -27,7 +27,7 @@ public abstract class CadastroPessoa {
 		this.cep = cep;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 

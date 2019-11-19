@@ -16,36 +16,18 @@ final class PfisicaController {
 	}
 	
 	private static void updateEntityFromDTO(final PessoaFisica pessoafisica, final PfisicaEntity pessoafisicaEntity) {
-		pessoafisicaEntity.setId(pessoafisica.getId());
+
 		pessoafisicaEntity.setCpf(pessoafisica.getCpf());
-		pessoafisicaEntity.setNome(pessoafisica.getNome());
 		pessoafisicaEntity.setSobrenome(pessoafisica.getSobrenome());
-		pessoafisicaEntity.setTelefone(pessoafisica.getTelefone());
-		pessoafisicaEntity.setCelular(pessoafisica.getCelular());
-		pessoafisicaEntity.setPais(pessoafisica.getPais());
-		pessoafisicaEntity.setEstado(pessoafisica.getEstado());
-		pessoafisicaEntity.setCidade(pessoafisica.getCidade());
-		pessoafisicaEntity.setBairro(pessoafisica.getBairro());
-		pessoafisicaEntity.setRua(pessoafisica.getRua());
-		pessoafisicaEntity.setCep(pessoafisica.getCep());
-		
+
 	}
 	
 	private static PfisicaEntity toEntity(final PessoaFisica pessoafisica) {
-		final long id = pessoafisica.getId();
-		final String cpf = pessoafisica.getCpf();
-		final String nome = pessoafisica.getNome();
-		final String sobrenome = pessoafisica.getSobrenome();
-		final String telefone = pessoafisica.getTelefone();
-		final String celular = pessoafisica.getCelular();
-		final String pais = pessoafisica.getPais();
-		final String estado = pessoafisica.getEstado();
-		final String cidade = pessoafisica.getCidade();
-		final String bairro = pessoafisica.getBairro();
-		final String rua = pessoafisica.getRua();
-		final String cep = pessoafisica.getCpf();
 
-		return new PfisicaEntity(id, nome, sobrenome, cpf, telefone, celular, pais, estado, cidade, bairro, rua, cep);
+		final String cpf = pessoafisica.getCpf();
+		final String sobrenome = pessoafisica.getSobrenome();
+
+		return new PfisicaEntity(cpf, sobrenome);
 	}
 	
 	private static PessoaFisica toDTO(final PfisicaEntity pfisicaEntity) {
