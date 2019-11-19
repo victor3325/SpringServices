@@ -1,4 +1,4 @@
-package com.example.projetovendas;
+package Carrinho;
 
 public class Carrinho {
 	 public static final Carrinho NULL_VALUE = new Carrinho(Long.valueOf(0),Double.valueOf(0.0),Double.valueOf(0.0),Double.valueOf(0.0));

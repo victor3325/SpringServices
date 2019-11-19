@@ -1,4 +1,4 @@
-package com.example.projetovendas;
+package CadastroPessoa;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

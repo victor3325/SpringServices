@@ -1,4 +1,4 @@
-package com.example.projetovendas;
+package Carrinho;
 
 import java.util.ArrayList;
 import java.util.List;

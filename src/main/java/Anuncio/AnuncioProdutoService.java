@@ -1,4 +1,4 @@
-package com.example.projetovendas;
+package Anuncio;
 
 import javax.validation.Valid;
 

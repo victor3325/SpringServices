@@ -1,4 +1,4 @@
-package com.example.projetovendas;
+package Carrinho;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

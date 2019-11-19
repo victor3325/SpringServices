@@ -1,4 +1,4 @@
-package com.example.projetovendas;
+package CadastroPessoa;
 
 public class PessoaFisica extends CadastroPessoa{
 

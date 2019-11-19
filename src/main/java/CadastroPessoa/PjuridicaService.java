@@ -1,4 +1,4 @@
-package com.example.projetovendas;
+package CadastroPessoa;
 
 import javax.validation.Valid;
 

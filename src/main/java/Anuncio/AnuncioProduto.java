@@ -1,4 +1,4 @@
-package com.example.projetovendas;
+package Anuncio;
 
 
 public class AnuncioProduto {
