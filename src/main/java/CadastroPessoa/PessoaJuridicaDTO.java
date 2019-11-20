@@ -1,6 +1,6 @@
 package CadastroPessoa;
 
-public class PessoaJuridica{
+public class PessoaJuridicaDTO{
 	private final int id;
 	private final String nome;
 	private final String sobrenome;
@@ -16,7 +16,7 @@ public class PessoaJuridica{
 	private final String cep;
 	
 
-	public PessoaJuridica(int id, String nome, String sobrenome, String responsavel, String cnpj, String telefone,
+	public PessoaJuridicaDTO(int id, String nome, String sobrenome, String responsavel, String cnpj, String telefone,
 			String celular, String pais, String estado, String cidade, String bairro, String rua, String cep) {
 		super();
 		this.id = id;

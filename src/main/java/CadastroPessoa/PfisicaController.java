@@ -15,14 +15,14 @@ final class PfisicaController {
 		this.pfisicaRepository = pfisicaRepository;
 	}
 	
-	private static void updateEntityFromDTO(final PessoaFisica pessoafisica, final PfisicaEntity pessoafisicaEntity) {
+	private static void updateEntityFromDTO(final PessoaFisicaDTO pessoafisica, final PfisicaEntity pessoafisicaEntity) {
 
 		pessoafisicaEntity.setCpf(pessoafisica.getCpf());
 		pessoafisicaEntity.setSobrenome(pessoafisica.getSobrenome());
 
 	}
 	
-	private static PfisicaEntity toEntity(final PessoaFisica pessoafisica) {
+	private static PfisicaEntity toEntity(final PessoaFisicaDTO pessoafisica) {
 
 		final String cpf = pessoafisica.getCpf();
 		final String sobrenome = pessoafisica.getSobrenome();
@@ -30,7 +30,7 @@ final class PfisicaController {
 		return new PfisicaEntity(cpf, sobrenome);
 	}
 	
-	private static PessoaFisica toDTO(final PfisicaEntity pfisicaEntity) {
+	private static PessoaFisicaDTO toDTO(final PfisicaEntity pfisicaEntity) {
 		
 		final long id = pfisicaEntity.getId();
 		final String cpf = pfisicaEntity.getCpf();
@@ -45,7 +45,7 @@ final class PfisicaController {
 		final String rua = pfisicaEntity.getRua();
 		final String cep = pfisicaEntity.getCpf();
 		
-		return new PessoaFisica(id, nome, sobrenome, cpf, telefone, celular, pais, estado, cidade, bairro, rua, cep);
+		return new PessoaFisicaDTO(id, nome, sobrenome, cpf, telefone, celular, pais, estado, cidade, bairro, rua, cep);
 		
 	}
 	
@@ -54,43 +54,43 @@ final class PfisicaController {
 		return !this.pfisicaRepository.existsById(id);
 	}
 	
-	List<PessoaFisica> getAllPessoaFisica(){
-		final List<PessoaFisica> pessoafisica = new ArrayList<>();
+	List<PessoaFisicaDTO> getAllPessoaFisica(){
+		final List<PessoaFisicaDTO> pessoafisica = new ArrayList<>();
 		this.pfisicaRepository.findAll().forEach(pfisicaEntity -> pessoafisica.add(PfisicaController.toDTO(pfisicaEntity)) );
 		
 		return pessoafisica;
 	}
 	
-	PessoaFisica getPessoaFisica(final Long id) {
+	PessoaFisicaDTO getPessoaFisica(final Long id) {
 		final Optional<PfisicaEntity> optionalPfisica = this.pfisicaRepository.findById(id);
 		if (optionalPfisica.isPresent()) {
 			return PfisicaController.toDTO(optionalPfisica.get());
 		}
-		return PessoaFisica.NULL_VALUE;
+		return PessoaFisicaDTO.NULL_VALUE;
 	}
-	PessoaFisica removePessoaFisica(final Long id) {
+	PessoaFisicaDTO removePessoaFisica(final Long id) {
 		final Optional<PfisicaEntity> optionalPfisica = this.pfisicaRepository.findById(id);
 		if (optionalPfisica.isPresent()) {
 			final PfisicaEntity pfisicaEntity = optionalPfisica.get();
 			this.pfisicaRepository.delete(pfisicaEntity);
 			return PfisicaController.toDTO(pfisicaEntity);
 		}
-			return PessoaFisica.NULL_VALUE;
+			return PessoaFisicaDTO.NULL_VALUE;
 	}
-	Long insertPessoaFisica(final PessoaFisica pFisica) {
+	Long insertPessoaFisica(final PessoaFisicaDTO pFisica) {
 		final PfisicaEntity pfisicaEntity = PfisicaController.toEntity(pessoafisica);
 		this.pfisicaRepository.save(pfisicaEntity);
 		return pfisicaEntity.getId();
 	}
-	PessoaFisica updatePessoaFisica(final Long id, final PessoaFisica pessoafisica){
+	PessoaFisicaDTO updatePessoaFisica(final Long id, final PessoaFisicaDTO pessoafisica){
 		final Optional<PfisicaEntity>optionalPfisica = this.pfisicaRepository.findById(id);
 		if(optionalPfisica.isPresent()) {
 			final PfisicaEntity pfisicaEntity = optionalPfisica.get();
-			final PessoaFisica oldPessoaFisica = PfisicaController.toDTO(pfisicaEntity);
+			final PessoaFisicaDTO oldPessoaFisica = PfisicaController.toDTO(pfisicaEntity);
 			PfisicaController.updateEntityFromDTO(pessoafisica, pfisicaEntity);
 			this.pfisicaRepository.save(pfisicaEntity);
 			return oldPessoaFisica;
 		}
-		return PessoaFisica.NULL_VALUE;
+		return PessoaFisicaDTO.NULL_VALUE;
 	}
 }
