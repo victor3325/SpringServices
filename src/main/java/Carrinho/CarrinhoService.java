@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class CarrinhoService {
 
-	private static final Carrinho [] Carr = new Carrinho[] {
-			new Carrinho(1, 300.00, 47, 347),
-			new Carrinho(2, 100, 25, 125),
-			new Carrinho(3, 938, 26, 964)
+	private static final CarrinhoDTO [] Carr = new CarrinhoDTO[] {
+			new CarrinhoDTO(1, 300.00, 47, 347),
+			new CarrinhoDTO(2, 100, 25, 125),
+			new CarrinhoDTO(3, 938, 26, 964)
 	};
 	
 	private final CarrinhoController carrinhoController;
@@ -33,39 +33,39 @@ public class CarrinhoService {
 	}
 
 	@GetMapping("/list")
-	public java.util.List<Carrinho> list(){
+	public java.util.List<CarrinhoDTO> list(){
 		return this.carrinhoController.getAllCarrinho();
 	}
 		
 	@GetMapping("/{id}/details") 
-	public ResponseEntity<Carrinho> getCarrinho (@PathVariable final Long id){
-		final Carrinho carrinho = this.carrinhoController.getCarrinho(id);
-		if(carrinho.equals(Carrinho.NULL_VALUE)){
+	public ResponseEntity<CarrinhoDTO> getCarrinho (@PathVariable final Long id){
+		final CarrinhoDTO carrinhoDTO = this.carrinhoController.getCarrinho(id);
+		if(carrinhoDTO.equals(CarrinhoDTO.NULL_VALUE)){
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-			return new ResponseEntity<>(carrinho,HttpStatus.OK);
+			return new ResponseEntity<>(carrinhoDTO,HttpStatus.OK);
 		}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Carrinho> removeCarrinho (@PathVariable final Long id){
-		final Carrinho removedCarrinho = this.carrinhoController.removeCarrinho(id);
-		if(removedCarrinho.equals(Carrinho.NULL_VALUE)) {
+	public ResponseEntity<CarrinhoDTO> removeCarrinho (@PathVariable final Long id){
+		final CarrinhoDTO removedCarrinho = this.carrinhoController.removeCarrinho(id);
+		if(removedCarrinho.equals(CarrinhoDTO.NULL_VALUE)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<>(removedCarrinho, HttpStatus.OK);
 	}
 	@PutMapping("/{id}")
-	public ResponseEntity<Carrinho> updateCarrinho(@PathVariable final Long id,@RequestBody final Carrinho carrinho){
-		final Carrinho oldCarrinho = this.carrinhoController.updateCarrinho(id, carrinho);
-		if (oldCarrinho.equals(Carrinho.NULL_VALUE)) {
+	public ResponseEntity<CarrinhoDTO> updateCarrinho(@PathVariable final Long id,@RequestBody final CarrinhoDTO carrinhoDTO){
+		final CarrinhoDTO oldCarrinho = this.carrinhoController.updateCarrinho(id, carrinhoDTO);
+		if (oldCarrinho.equals(CarrinhoDTO.NULL_VALUE)) {
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 		return new ResponseEntity<>(oldCarrinho, HttpStatus.OK);
 	}
 	
 	@PostMapping
-	public Long insertCarinho(@RequestBody final Carrinho carrinho) {
-		return this.carrinhoController.insertCarrinho(carrinho);
+	public Long insertCarinho(@RequestBody final CarrinhoDTO carrinhoDTO) {
+		return this.carrinhoController.insertCarrinho(carrinhoDTO);
 	}
 }
 

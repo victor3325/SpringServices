@@ -1,15 +1,16 @@
 package Anuncio;
 
 
-public class AnuncioProduto {
+
+public class AnuncioProdutoDTO {
 		
+	public static final AnuncioProdutoDTO NULL_VALUE = new AnuncioProdutoDTO(Long.valueOf(0), "", Double.valueOf(0.0), Integer.valueOf(0), "", "", "", "", "", "", "", "", "");
 	
-	
-		private final int id;
+		private final long id;
 		private final String nome;
 	    private final double preco_unit;
 	    private final int quantidade;
-	    private final String tipo;
+	    private final String categoria;
 	    private final String moeda;
 	    private final String entrega;
 	    private final String descricao;
@@ -19,7 +20,7 @@ public class AnuncioProduto {
 	    private final String cep;
 	    private final String imagem_produto;
 	    
-		public AnuncioProduto(int id, String nome, double preco_unit, int quantidade, String tipo, String moeda,
+		public AnuncioProdutoDTO(long id, String nome, double preco_unit, int quantidade, String categoria, String moeda,
 				String entrega, String descricao, String cidade, String estado, String pais, String cep,
 				String imagem_produto) {
 			super();
@@ -27,7 +28,7 @@ public class AnuncioProduto {
 			this.nome = nome;
 			this.preco_unit = preco_unit;
 			this.quantidade = quantidade;
-			this.tipo = tipo;
+			this.categoria = categoria;
 			this.moeda = moeda;
 			this.entrega = entrega;
 			this.descricao = descricao;
@@ -38,7 +39,7 @@ public class AnuncioProduto {
 			this.imagem_produto = imagem_produto;
 		}
 		
-		public int getId() {
+		public long getId() {
 			return id;
 		}
 		public String getNome() {
@@ -50,8 +51,8 @@ public class AnuncioProduto {
 		public int getQuantidade() {
 			return quantidade;
 		}
-		public String getTipo() {
-			return tipo;
+		public String getcategoria() {
+			return categoria;
 		}
 		public String getMoeda() {
 			return moeda;

@@ -7,37 +7,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity(name = "Anuncio")
-public class AnuncioProdutoEntity {
+final class AnuncioProdutoEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private final long id;
+	private long id;
 	@Column
-	private final String nome;
+	private String nome;
 	@Column
-    private final double preco_unit;
+    private double preco_unit;
 	@Column
-    private final int quantidade;
+    private int quantidade;
 	@Column
-    private final String tipo;
+    private String categoria;
 	@Column
-    private final String moeda;
+    private String moeda;
 	@Column
-    private final String entrega;
+    private String entrega;
 	@Column
-    private final String descricao;
+    private String descricao;
 	@Column
-    private final String cidade;
+    private String cidade;
 	@Column
-    private final String estado;
+    private String estado;
 	@Column
-    private final String pais;
+    private String pais;
 	@Column
-    private final String cep;
+    private String cep;
 	@Column
 	
-    private final String imagem_produto;
-	public AnuncioProdutoEntity(long id, String nome, double preco_unit, int quantidade, String tipo, String moeda,
+    private String imagem_produto;
+	
+	public AnuncioProdutoEntity(long id, String nome, double preco_unit, int quantidade, String categoria, String moeda,
 			String entrega, String descricao, String cidade, String estado, String pais, String cep,
 			String imagem_produto) {
 		super();
@@ -45,7 +46,7 @@ public class AnuncioProdutoEntity {
 		this.nome = nome;
 		this.preco_unit = preco_unit;
 		this.quantidade = quantidade;
-		this.tipo = tipo;
+		this.categoria = categoria;
 		this.moeda = moeda;
 		this.entrega = entrega;
 		this.descricao = descricao;
@@ -55,46 +56,113 @@ public class AnuncioProdutoEntity {
 		this.cep = cep;
 		this.imagem_produto = imagem_produto;
 	}
-	
+
 	public long getId() {
 		return id;
 	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public double getPreco_unit() {
 		return preco_unit;
 	}
+
+	public void setPreco_unit(double preco_unit) {
+		this.preco_unit = preco_unit;
+	}
+
 	public int getQuantidade() {
 		return quantidade;
 	}
-	public String getTipo() {
-		return tipo;
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
 	}
+
+	public String getcategoria() {
+		return categoria;
+	}
+
+	public void setcategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
 	public String getMoeda() {
 		return moeda;
 	}
+
+	public void setMoeda(String moeda) {
+		this.moeda = moeda;
+	}
+
 	public String getEntrega() {
 		return entrega;
 	}
+
+	public void setEntrega(String entrega) {
+		this.entrega = entrega;
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 	public String getCidade() {
 		return cidade;
 	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
 	public String getEstado() {
 		return estado;
 	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
 	public String getPais() {
 		return pais;
 	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
 	public String getCep() {
 		return cep;
 	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
 	public String getImagem_produto() {
 		return imagem_produto;
 	}
+
+	public void setImagem_produto(String imagem_produto) {
+		this.imagem_produto = imagem_produto;
+	}
+
 	
+
+
 	
 }
