@@ -46,7 +46,7 @@ public class AnuncioProdutoController {
 	    final String pais = anuncioDTO.getPais();
 	    final String cep = anuncioDTO.getCep();
 	    final String imagem_produto = anuncioDTO.getImagem_produto();
-		return new AnuncioProdutoEntity(id, nome, preco_unit, quantidade, categoria, moeda, entrega, descricao, cidade, estado, pais, cep, imagem_produto)
+		return new AnuncioProdutoEntity(id, nome, preco_unit, quantidade, categoria, moeda, entrega, descricao, cidade, estado, pais, cep, imagem_produto);
 	}
 
 	private static AnuncioProdutoDTO toDTO(final AnuncioProdutoEntity anuncioEntity) {
@@ -63,7 +63,7 @@ public class AnuncioProdutoController {
 	    final String pais = anuncioEntity.getPais();
 	    final String cep = anuncioEntity.getCep();
 	    final String imagem_produto = anuncioEntity.getImagem_produto();
-		return new AnuncioProdutoDTO(id, nome, preco_unit, quantidade, categoria, moeda, entrega, descricao, cidade, estado, pais, cep, imagem_produto)
+		return new AnuncioProdutoDTO(id, nome, preco_unit, quantidade, categoria, moeda, entrega, descricao, cidade, estado, pais, cep, imagem_produto);
 	}
 
 	private boolean isNotExistsProductByIdentifier(final Long id) {
@@ -105,12 +105,12 @@ public class AnuncioProdutoController {
 		final Optional<AnuncioProdutoEntity> optionalProduto = this.anuncioRepository.findById(id);
 		if (optionalProduto.isPresent()) {
 			final AnuncioProdutoEntity anuncioEntity = optionalProduto.get();
-			final CarrinhoDTO oldCarrinho = CarrinhoController.toDTO(carrinhoEntity);
-			CarrinhoController.updateEntityFromDTO(carrinhoDTO, carrinhoEntity);
-			this.carrinhoRepository.save(carrinhoEntity);
-			return oldCarrinho;
+			final AnuncioProdutoDTO oldProduto = AnuncioProdutoController.toDTO(anuncioEntity);
+			AnuncioProdutoController.updateEntityFromDTO(anuncioDTO, anuncioEntity);
+			this.anuncioRepository.save(anuncioEntity);
+			return oldProduto;
 		}
-		return CarrinhoDTO.NULL_VALUE;
+		return AnuncioProdutoDTO.NULL_VALUE;
 		
 	}
 
