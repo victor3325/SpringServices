@@ -1,5 +1,6 @@
-package CadastroPessoa;
+package PessoaFisica;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,23 +12,31 @@ final class PfisicaEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
-	private  long id;	
-	private  String nome;
-	private  String sobrenome;
-	private  String cpf;
-	private  String telefone;
-	private  String celular;
-	private final String pais;
-	private final String estado;
-	private final String cidade;
-	private final String bairro;
-	private final String rua;
-	private final String cep;
+	private long id;	
+	@Column
+	private String nome;
+	@Column
+	private String sobrenome;
+	@Column
+	private String cpf;
+	@Column
+	private String telefone;
+	@Column
+	private String celular;
+	@Column
+	private String pais;
+	@Column
+	private String estado;
+	@Column
+	private String cidade;
+	@Column
+	private String bairro;
+	@Column
+	private String rua;
+	@Column
+	private String cep;
 	
 	
-	protected PfisicaEntity() {
-		
-	}
 	public PfisicaEntity(long id, String nome, String sobrenome, String cpf, String telefone, String celular,
 			String pais, String estado, String cidade, String bairro, String rua, String cep) {
 		super();
@@ -44,6 +53,7 @@ final class PfisicaEntity {
 		this.rua = rua;
 		this.cep = cep;
 	}
+	
 	public long getId() {
 		return id;
 	}
@@ -97,7 +107,32 @@ final class PfisicaEntity {
 	}
 	public String getCep() {
 		return cep;
+		
 	}
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
 	@Override
 	public String toString() {
 		return "PfisicaEntity [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", cpf=" + cpf

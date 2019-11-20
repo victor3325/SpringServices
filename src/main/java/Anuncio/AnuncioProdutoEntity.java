@@ -35,7 +35,6 @@ final class AnuncioProdutoEntity {
 	@Column
     private String cep;
 	@Column
-	
     private String imagem_produto;
 	
 	public AnuncioProdutoEntity(long id, String nome, double preco_unit, int quantidade, String categoria, String moeda,

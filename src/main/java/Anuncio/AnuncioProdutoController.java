@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 
-
 @Controller
 public class AnuncioProdutoController {
 	
@@ -66,10 +65,10 @@ public class AnuncioProdutoController {
 		return new AnuncioProdutoDTO(id, nome, preco_unit, quantidade, categoria, moeda, entrega, descricao, cidade, estado, pais, cep, imagem_produto);
 	}
 
-	private boolean isNotExistsProductByIdentifier(final Long id) {
+	/*private boolean isNotExistsProductByIdentifier(final Long id) {
 		// TODO Auto-generated method stub
 		return !this.anuncioRepository.existsById(id);
-	}
+	}*/
 
 	List<AnuncioProdutoDTO> getAllProduto() {
 		final List<AnuncioProdutoDTO> carrinhoDTO = new ArrayList<>();
@@ -96,9 +95,9 @@ public class AnuncioProdutoController {
 	}
 
 	Long insertProduto(final AnuncioProdutoDTO anuncioDTO) {
-		final AnuncioProdutoEntity carrinhoEntity = AnuncioProdutoController.toEntity(anuncioDTO);
-		this.anuncioRepository.save(carrinhoEntity);
-		return carrinhoEntity.getId();
+		final AnuncioProdutoEntity anuncioEntity = AnuncioProdutoController.toEntity(anuncioDTO);
+		this.anuncioRepository.save(anuncioEntity);
+		return anuncioEntity.getId();
 	}
 
 	AnuncioProdutoDTO updateProduto(final Long id, final AnuncioProdutoDTO anuncioDTO) {

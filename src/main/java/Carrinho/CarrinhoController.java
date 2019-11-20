@@ -6,8 +6,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
-
 @Controller
 final class CarrinhoController {
 
@@ -41,10 +39,10 @@ final class CarrinhoController {
 		return new CarrinhoDTO(id,valor_unitario, valor_frete, total_pedido);
 	}
 
-	private boolean isNotExistsProductByIdentifier(final Long id) {
+	/*private boolean isNotExistsProductByIdentifier(final Long id) {
 		// TODO Auto-generated method stub
 		return !this.carrinhoRepository.existsById(id);
-	}
+	}*/
 
 	List<CarrinhoDTO> getAllCarrinho() {
 		final List<CarrinhoDTO> carrinhoDTO = new ArrayList<>();

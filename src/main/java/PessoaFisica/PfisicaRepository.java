@@ -1,4 +1,4 @@
-package CadastroPessoa;
+package PessoaFisica;
 
 import org.springframework.data.repository.CrudRepository;
 

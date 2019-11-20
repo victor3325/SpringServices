@@ -1,8 +1,12 @@
-package CadastroPessoa;
+package PessoaJuridica;
 
-public abstract class CadastroPessoa {
-	private final long id;
+public class PessoaJuridicaDTO {
+	public static final PessoaJuridicaDTO NULL_VALUE = new PessoaJuridicaDTO(Long.valueOf(0), "", "", "", "", "", "", "","", "", "", "");
+	
+	private final long id;	
 	private final String nome;
+	private final String responsavel;
+	private final String cnpj;
 	private final String telefone;
 	private final String celular;
 	private final String pais;
@@ -12,11 +16,13 @@ public abstract class CadastroPessoa {
 	private final String rua;
 	private final String cep;
 	
-	public CadastroPessoa(long id, String nome, String telefone, String celular, String pais, String estado,
-			String cidade, String bairro, String rua, String cep) {
+	public PessoaJuridicaDTO(long id, String nome, String responsavel, String cnpj, String telefone, String celular,
+			String pais, String estado, String cidade, String bairro, String rua, String cep) {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.responsavel = responsavel;
+		this.cnpj = cnpj;
 		this.telefone = telefone;
 		this.celular = celular;
 		this.pais = pais;
@@ -33,6 +39,14 @@ public abstract class CadastroPessoa {
 
 	public String getNome() {
 		return nome;
+	}
+
+	public String getResponsavel() {
+		return responsavel;
+	}
+
+	public String getCnpj() {
+		return cnpj;
 	}
 
 	public String getTelefone() {
@@ -67,6 +81,7 @@ public abstract class CadastroPessoa {
 		return cep;
 	}
 	
+	
+
+	
 }
-	
-	

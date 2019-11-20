@@ -1,7 +1,5 @@
 package Anuncio;
 
-
-
 public class AnuncioProdutoDTO {
 		
 	public static final AnuncioProdutoDTO NULL_VALUE = new AnuncioProdutoDTO(Long.valueOf(0), "", Double.valueOf(0.0), Integer.valueOf(0), "", "", "", "", "", "", "", "", "");
