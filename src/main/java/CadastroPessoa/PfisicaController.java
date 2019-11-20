@@ -24,10 +24,20 @@ final class PfisicaController {
 	
 	private static PfisicaEntity toEntity(final PessoaFisica pessoafisica) {
 
+		final long id = pessoafisica.getId();
 		final String cpf = pessoafisica.getCpf();
+		final String nome = pessoafisica.getNome();
 		final String sobrenome = pessoafisica.getSobrenome();
+		final String telefone = pessoafisica.getTelefone();
+		final String celular = pessoafisica.getCelular();
+		final String pais = pessoafisica.getPais();
+		final String estado = pessoafisica.getEstado();
+		final String cidade = pessoafisica.getCidade();
+		final String bairro = pessoafisica.getBairro();
+		final String rua = pessoafisica.getRua();
+		final String cep = pessoafisica.getCep();
 
-		return new PfisicaEntity(cpf, sobrenome);
+		return new PfisicaEntity(id, cpf, nome, sobrenome, telefone, celular, pais,estado,cidade,bairro,rua,cep);
 	}
 	
 	private static PessoaFisica toDTO(final PfisicaEntity pfisicaEntity) {
