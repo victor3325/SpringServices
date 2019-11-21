@@ -1,7 +1,7 @@
 package Carrinho;
 
 public class CarrinhoDTO {
-	 public static final CarrinhoDTO NULL_VALUE = new CarrinhoDTO(Long.valueOf(0),Double.valueOf(0.0),Double.valueOf(0.0),Double.valueOf(0.0));
+	public static final CarrinhoDTO NULL_VALUE = new CarrinhoDTO(Long.valueOf(0),Double.valueOf(0.0),Double.valueOf(0.0),Double.valueOf(0.0));
 	
 	private long id;
 	private double valor_unitario;

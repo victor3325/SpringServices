@@ -160,6 +160,14 @@ final class AnuncioProdutoEntity {
 		this.imagem_produto = imagem_produto;
 	}
 
+	@Override
+	public String toString() {
+		return "AnuncioProdutoEntity [id=" + id + ", nome=" + nome + ", preco_unit=" + preco_unit + ", quantidade="
+				+ quantidade + ", categoria=" + categoria + ", moeda=" + moeda + ", entrega=" + entrega + ", descricao="
+				+ descricao + ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + ", cep=" + cep
+				+ ", imagem_produto=" + imagem_produto + "]";
+	}
+
 	
 
 
