@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
-
+@RestController
+@RequestMapping("/endereco")
 public class EnderecoService {
 	
-	private static final EnderecoDTO[] Anuncio = new EnderecoDTO[] {
+	private static final EnderecoDTO[] Endereco = new EnderecoDTO[] {
 			new EnderecoDTO(1, "pais", "estado", "cidade", "bairro", "rua", "cep"),
 			new EnderecoDTO(2, "pais2", "estado2", "cidade2", "bairro2", "rua2", "cep2")
 	};
@@ -24,7 +27,7 @@ public class EnderecoService {
 	
 	public EnderecoService(final EnderecoController enderecoController) {
 		this.enderecoController = enderecoController;
-		Arrays.asList(EnderecoService.Anuncio).forEach(dto ->this.enderecoController.insertEndereco(dto));
+		Arrays.asList(EnderecoService.Endereco).forEach(dto ->this.enderecoController.insertEndereco(dto));
 	}
 
 	@GetMapping("/list")

@@ -3,18 +3,21 @@ package Usuario;
 public class UsuarioDTO {
 	
 	
-	public static final UsuarioDTO NULL_VALUE = new UsuarioDTO(Long.valueOf(0), String.valueOf(""), String.valueOf(""));
-	private final Long id;
-	private String email;
-	private String senha;
+	public static final UsuarioDTO NULL_VALUE = new UsuarioDTO(Long.valueOf(0),"","","");
+	private final long id;
+	private final String login;
+	private final String email;
+	private final String senha;
 
-	public UsuarioDTO(Long id, String email, String senha) {
+	public UsuarioDTO(long id, String login, String email, String senha) {
+		super();
 		this.id = id;
+		this.login = login;
 		this.email = email;
 		this.senha = senha;
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -26,11 +29,9 @@ public class UsuarioDTO {
 		return senha;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+
 }
